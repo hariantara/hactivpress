@@ -7,11 +7,15 @@ vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    signupData: []
+    signupData: [],
+    artCreate: []
   },
   mutations: {
     signup (state, payload) {
       state.signupData = payload
+    },
+    create (state, payload) {
+      state.artCrate = payload
     }
   },
   actions: {
@@ -38,6 +42,26 @@ export default new Vuex.Store({
       .then(response => {
         localStorage.setItem('token', response.data)
         router.push('/')
+      })
+    },
+    createArticle (store, payload) {
+      console.log('CREATE: ', payload)
+      axios.post('http://localhost:3000/articles', {
+        title: payload.title,
+        content: payload.content,
+        category: payload.category
+      }, {
+        headers: {
+          token: localStorage.getItem('token')
+        }
+      })
+      .then(response => {
+        console.log('create response: ', response)
+        store.commit('create', response.data)
+        alert('success create')
+      })
+      .catch(err => {
+        console.log(err)
       })
     }
   }
