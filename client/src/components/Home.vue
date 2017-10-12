@@ -1,7 +1,7 @@
 <template>
   <div class="Home">
     <div class="container">
-      <div class="row">
+      <div class="isidata">
         <ArticleForm/>
       </div>
     </div>
@@ -19,4 +19,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+.isidata {
+  margin-top: 73px;
+}
 </style>

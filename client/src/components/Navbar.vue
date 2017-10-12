@@ -1,6 +1,6 @@
 <template lang="html">
   <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
+  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
         <span class="sr-only">Toggle navigation</span>
@@ -13,7 +13,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><router-link :to="{ name: 'Login' }">Login</router-link></li>
       </ul>
     </div>
   </div>
