@@ -13,7 +13,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav navbar-right">
-        <li><router-link :to="{ name: 'Login' }">Login</router-link></li>
+        <li><router-link :to="{ path: '/login' }">Login</router-link></li>
       </ul>
     </div>
   </div>

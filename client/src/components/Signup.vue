@@ -4,15 +4,15 @@
         <div class='col-md-3'></div>
         <div class="col-md-6">
             <div class="login-box well">
-                    <form @submit.prevent="loginmasuk()">
-                        <legend>Sign In</legend>
+                    <form @submit.prevent="daftarsubmit()">
+                        <legend>Sign Up</legend>
                         <div class="form-group">
                             <label for="username-email">Username</label>
-                            <input id="username-email" placeholder="Username" type="text" class="form-control" v-model="masuk.username" />
+                            <input id="username-email" placeholder="Username" type="text" class="form-control" v-model="daftar.username" />
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input id="password" placeholder="Password" type="password" class="form-control" v-model="masuk.password"/>
+                            <input id="password" placeholder="Password" type="password" class="form-control" v-model="daftar.password" />
                         </div>
                         <div class="input-group">
                           <div class="checkbox">
@@ -22,13 +22,13 @@
                           </div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-default btn-login-submit btn-block m-t-md">Login</button>
+                            <button type="submit" class="btn btn-default btn-login-submit btn-block m-t-md">Sign Up</button>
                         </div>
                         <span class='text-center'><a href="/resetting/request" class="text-sm">Forgot Password?</a></span>
                         <div class="form-group">
-                            <p class="text-center m-t-xs text-sm">Do not have an account?</p>
-                            <router-link :to="{ name: 'Signup' }">
-                              <a class="btn btn-default btn-block m-t-md">Create an account</a>
+                            <p class="text-center m-t-xs text-sm">Already have an account?</p>
+                            <router-link :to="{ name: 'Login' }">
+                              <a class="btn btn-default btn-block m-t-md">Login</a>
                             </router-link>
                         </div>
                     </form>
@@ -45,7 +45,7 @@ import { mapActions } from 'vuex'
 export default {
   data () {
     return {
-      masuk: {
+      daftar: {
         username: '',
         password: ''
       }
@@ -53,10 +53,10 @@ export default {
   },
   methods: {
     ...mapActions([
-      'loginAccount'
+      'createAccount'
     ]),
-    loginmasuk () {
-      this.loginAccount(this.masuk)
+    daftarsubmit () {
+      this.createAccount(this.daftar)
     }
   }
 }
