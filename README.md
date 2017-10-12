@@ -1,6 +1,6 @@
 # hactivpress
-## this hacktivpress is simple blog that only has feature CRUD.
-## hacktivpress only for live
+#### this hacktivpress is simple blog that only has feature CRUD.
+#### hacktivpress only for live
 
 ## the installation
 ## On Server Side
