@@ -16,12 +16,19 @@
     <div class="tombolsubmit">
       <a href="" class="btn btn-success" @click.prevent="createUpload()">Success</a>
     </div>
+    <div class="displayart">
+      <DisplayArt/>
+    </div>
   </div>
 </template>
 
 <script>
+import DisplayArt from '@/components/DisplayArt'
 import { mapActions } from 'vuex'
 export default {
+  components: {
+    DisplayArt
+  },
   data () {
     return {
       artData: {

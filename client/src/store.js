@@ -8,7 +8,8 @@ vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     signupData: [],
-    artCreate: []
+    artCreate: [],
+    artData: []
   },
   mutations: {
     signup (state, payload) {
@@ -16,6 +17,9 @@ export default new Vuex.Store({
     },
     create (state, payload) {
       state.artCrate = payload
+    },
+    getArt (state, payload) {
+      state.artData = payload
     }
   },
   actions: {
@@ -59,6 +63,16 @@ export default new Vuex.Store({
         console.log('create response: ', response)
         store.commit('create', response.data)
         alert('success create')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    },
+    getArticle (store, payload) {
+      axios.get('http://localhost:3000/articles')
+      .then(response => {
+        console.log('getART RESPONSE: ', response)
+        store.commit('getArt', response.data)
       })
       .catch(err => {
         console.log(err)
